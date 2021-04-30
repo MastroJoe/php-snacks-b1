@@ -48,10 +48,15 @@ $posts2021 = [
 
 var_dump($posts2021);
 
-// ciclo ogni array e stampo ogni data con le relative informazioni
-for ($i=0; $i < count($posts2021); $i++) {
-?>
-  <p class="" style="font-size: 20px;">
-
-  </p>
-<?php } ?>
+// ciclo ogni array
+foreach ($posts2021 as $data => $informazioni) { ?>
+    <p> <?= $data ?> </p>
+    <?php
+    // e stampo ogni data con le relative informazioni
+    for ($i=0; $i < count($informazioni) ; $i++) { ?>
+      <p><?= $informazioni[$i]["title"] ?></p>
+      <p><?= $informazioni[$i]["author"] ?></p>
+      <p><?= $informazioni[$i]["text"] ?></p>
+      <br>
+    <?php  } ?>
+<?php  } ?>
